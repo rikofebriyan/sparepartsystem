@@ -17,7 +17,8 @@ class RequestrepairController extends Controller
     public function index(Request $request)
     {
         //
-        $requestrepair = requestrepair::latest()->get();
+        // $requestrepair = requestrepair::latest()->get();
+        $requestrepair = requestrepair::all()->sortByDesc('id');
         return view('sparepartrepair.waiting', [
             'reqtzy' => $requestrepair,
         ]);
