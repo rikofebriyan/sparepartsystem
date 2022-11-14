@@ -18,7 +18,8 @@
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 
     <link rel="stylesheet" href="{{ asset('/css/riko.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('datatables/datatables.min.css') }}" />
+    {{-- <link rel="stylesheet" type="text/css" href="{{ asset('datatables/datatables.min.css') }}" /> --}}
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css" />
 
 
 </head>
@@ -120,9 +121,7 @@
 <script type="text/javascript" src="{{ asset('datatables/datatables.min.js') }}"></script>
 <script>
     $(document).ready(function() {
-        $('#example').DataTable({
-            scrollX: true,
-        });
+        $('#example').DataTable();
     });
 </script>
 
