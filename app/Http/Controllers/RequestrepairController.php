@@ -134,30 +134,39 @@ class RequestrepairController extends Controller
     public function update(UpdaterequestrepairRequest $request, requestrepair $requestrepair)
     {
         //
-        $validatedData = $request->validate([
-            'nama' => 'required',
-            'reg' => 'required',
-            'machine_name' => 'required',
-            'line_name' => 'required',
-            'part_name' => 'required',
-            'part_type' => 'required',
-            'serial_no' => 'required',
-            'maker' => 'required',
-            'problem' => 'required',
-            'status' => 'required'
-        ]);
+        // $validatedData = $request->validate([
+        //     'nama' => 'required',
+        //     'reg' => 'required',
+        //     'machine_name' => 'required',
+        //     'line_name' => 'required',
+        //     'part_name' => 'required',
+        //     'part_type' => 'required',
+        //     'serial_no' => 'required',
+        //     'maker' => 'required',
+        //     'problem' => 'required',
+        //     'status' => 'required'
+        // ]);
 
         $requestrepair = requestrepair::find($request->get('id'));
-        $requestrepair->nama = $validatedData['nama'];
-        $requestrepair->reg = $validatedData['reg'];
-        $requestrepair->machine_name = $validatedData['machine_name'];
-        $requestrepair->line_name = $validatedData['line_name'];
-        $requestrepair->part_name = $validatedData['part_name'];
-        $requestrepair->part_type = $validatedData['part_type'];
-        $requestrepair->serial_no = $validatedData['serial_no'];
-        $requestrepair->maker = $validatedData['maker'];
-        $requestrepair->problem = $validatedData['problem'];
-        $requestrepair->status = $validatedData['status'];    
+        $requestrepair->nama=$request->get('nama');
+        $requestrepair->reg=$request->get('reg');
+        $requestrepair->machine_name=$request->get('machine_name');
+        $requestrepair->line_name=$request->get('line_name');
+        $requestrepair->part_name=$request->get('part_name');
+        $requestrepair->part_type=$request->get('part_type');
+        $requestrepair->serial_no=$request->get('serial_no');
+        $requestrepair->maker=$request->get('maker');
+        $requestrepair->problem=$request->get('problem');
+        $requestrepair->status=$request->get('status');
+        // $requestrepair->reg = $validatedData['reg'];
+        // $requestrepair->machine_name = $validatedData['machine_name'];
+        // $requestrepair->line_name = $validatedData['line_name'];
+        // $requestrepair->part_name = $validatedData['part_name'];
+        // $requestrepair->part_type = $validatedData['part_type'];
+        // $requestrepair->serial_no = $validatedData['serial_no'];
+        // $requestrepair->maker = $validatedData['maker'];
+        // $requestrepair->problem = $validatedData['problem'];
+        // $requestrepair->status = $validatedData['status']; 
 
         $requestrepair->save();
 

@@ -294,7 +294,6 @@
                                     </div>
                                 </div>
                             </div>
-                        </form>
                     </div>
                 </div>
             </div>
@@ -317,78 +316,75 @@
                     <div class="accordion-body">
 
                         {{-- form input --}}
-                        <form class="{{ route('progresstable.update', $requestrepair->id) }}" method="POST">
-                            @csrf
-                            @method('put')
-                            <input type="hidden" name="id" id="id" value="">
-                            <div class="container-fluid justify-content-center py-0">
-                                <div class="container-fluid">
-                                    <div class="row gx-3">
-                                        <div class="col">
-                                            <div class="p-3 border">
+                        <input type="hidden" name="id" id="id" value="">
+                        <div class="container-fluid justify-content-center py-0">
+                            <div class="container-fluid">
+                                <div class="row gx-3">
+                                    <div class="col">
+                                        <div class="p-3 border">
 
-                                                <div class="mb-3 row">
-                                                    <label for="sparepart_ETA" class="col-sm-2 col-form-label">Spare Part
-                                                        ETA</label>
-                                                    <div class="col-sm-10">
-                                                        <input type="datetime-local" class="form-control"
-                                                            id="sparepart_ETA" name="sparepart_ETA" value="">
-                                                    </div>
+                                            <div class="mb-3 row">
+                                                <label for="sparepart_ETA" class="col-sm-2 col-form-label">Spare Part
+                                                    ETA</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control" id="sparepart_ETA"
+                                                        name="sparepart_ETA" value="">
                                                 </div>
-
-                                                <div class="mb-3 row">
-                                                    <label for="type_of_part" class="col-sm-2 col-form-label">Type of
-                                                        Part</label>
-                                                    <div class="col-sm-10">
-                                                        <input type="text" class="form-control" id="type_of_part"
-                                                            name="type_of_part" value="">
-                                                    </div>
-                                                </div>
-
-                                                <div class="mb-3 row invisible">
-                                                    <label for="status" class="col-sm-2 col-form-label">Status</label>
-                                                    <div class="col-sm-10">
-                                                        <input type="text" class="form-control" id="status"
-                                                            name="status" value="progressed_admin" required>
-                                                    </div>
-                                                </div>
-
-
                                             </div>
+
+                                            <div class="mb-3 row">
+                                                <label for="type_of_part" class="col-sm-2 col-form-label">Type of
+                                                    Part</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control" id="type_of_part"
+                                                        name="type_of_part" value="">
+                                                </div>
+                                            </div>
+
+                                            <div class="mb-3 row invisible">
+                                                <label for="status" class="col-sm-2 col-form-label">Status</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control" id="status"
+                                                        name="status" value="progressed_admin" required>
+                                                </div>
+                                            </div>
+
+
                                         </div>
-                                        <div class="col">
+                                    </div>
+                                    <div class="col">
 
-                                            <div class="p-3 border bg-light">
+                                        <div class="p-3 border bg-light">
 
-                                                <div class="mb-3 row">
-                                                    <label for="part_price" class="col-sm-2 col-form-label">
-                                                        Part Price</label>
-                                                    <div class="col-sm-10">
-                                                        <input type="number" class="form-control number" id="part_price"
-                                                            name="part_price" value="">
-                                                    </div>
+                                            <div class="mb-3 row">
+                                                <label for="part_price" class="col-sm-2 col-form-label">
+                                                    Part Price</label>
+                                                <div class="col-sm-10">
+                                                    <input type="number" class="form-control number" id="part_price"
+                                                        name="part_price" value="">
                                                 </div>
-
-                                                <div class="mb-3 row">
-                                                    <label for="stock_sparepart" class="col-sm-2 col-form-label">
-                                                        Stock Spare Part</label>
-                                                    <div class="col-sm-10">
-                                                        <input type="number" class="form-control number"
-                                                            id="stock_sparepart" name="stock_sparepart" value="">
-                                                    </div>
-                                                </div>
-
-
-                                                <button type="submit" class="btn btn-md btn-primary">Save</button>
-                                                <a href="{{ route('progresstable.index') }}"
-                                                    class="btn btn-md btn-secondary">back</a>
                                             </div>
 
+                                            <div class="mb-3 row">
+                                                <label for="stock_sparepart" class="col-sm-2 col-form-label">
+                                                    Stock Spare Part</label>
+                                                <div class="col-sm-10">
+                                                    <input type="number" class="form-control number"
+                                                        id="stock_sparepart" name="stock_sparepart" value="">
+                                                </div>
+                                            </div>
+
+
+                                            <button type="submit" class="btn btn-md btn-primary">Save</button>
+                                            <a href="{{ route('progresstable.index') }}"
+                                                class="btn btn-md btn-secondary">back</a>
                                         </div>
 
                                     </div>
+
                                 </div>
                             </div>
+                        </div>
                         </form>
                     </div>
                 </div>
