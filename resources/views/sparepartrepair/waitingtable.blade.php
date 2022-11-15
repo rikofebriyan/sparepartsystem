@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 
+
 @section('content')
     <div class="container-fluid">
         <H2>INVENTORY MANAGEMANT SYSTEM</H2>
@@ -55,22 +56,31 @@
                             <td>{{ $req->created_at->format('d-m-Y') }}</td>
                             <td class="text-center">
 
+
                                 {{-- <a href="{{ route('waitingtable.show', $req->id) }}" class="btn btn-sm btn-primary">EDIT</a> --}}
                                 <div class="btn-group" role="group">
 
                                     <form action="{{ route('waitingtable.show', $req->id) }}" method="get">
-                                        <input type="hidden" name="id" id="id" value="{{ $req->id }}">
-                                        <button type="submit" class="btn btn-sm btn-primary mx-1">EDIT</button>
-                                    </form>
-                                    <form onsubmit="return confirm('Apakah Anda Yakin ?');"
-                                        action="{{ route('waitingtable.destroy', $req->id) }}" method="POST">
-                                        @csrf
-                                        @method('DELETE')
-                                        <input type="hidden" name="id" id="id" value="{{ $req->id }}">
-                                        <button type="submit" class="btn btn-sm btn-danger mx-1">HAPUS</button>
-                                    </form>
 
-                                </div>
+                                        {{-- <a href="{{ route('progresstable.show', $req->id) }}" class="btn btn-sm btn-primary">EDIT</a> --}}
+                                        <div class="btn-group" role="group">
+
+                                            <form action="{{ route('progresstable.show', $req->id) }}" method="get">
+
+                                                <input type="hidden" name="id" id="id"
+                                                    value="{{ $req->id }}">
+                                                <button type="submit" class="btn btn-sm btn-primary mx-1">EDIT</button>
+                                            </form>
+                                            <form onsubmit="return confirm('Apakah Anda Yakin ?');"
+                                                action="{{ route('waitingtable.destroy', $req->id) }}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <input type="hidden" name="id" id="id"
+                                                    value="{{ $req->id }}">
+                                                <button type="submit" class="btn btn-sm btn-danger mx-1">HAPUS</button>
+                                            </form>
+
+                                        </div>
                             </td>
                         </tr>
                     @empty
