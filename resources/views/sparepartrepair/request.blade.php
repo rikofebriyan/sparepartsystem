@@ -21,7 +21,7 @@
 
                         {{-- form input --}}
 
-                        <form action="{{ route('waiting.store') }}" method="POST">
+                        <form action="{{ route('waitingtable.store') }}" method="POST">
                             @csrf
                             <div class="container-fluid justify-content-center py-0">
                                 <div class="container-fluid">
@@ -230,7 +230,7 @@
                                                         <button class="btn btn-primary add-more" type="button">+</button>
                                                     </div>
                                                 </div>
-                     --}}
+                                --}}
                                                 {{-- COPY INISIBLE FORM --}}
 
                                                 {{-- <div class="copy invisible">
@@ -403,7 +403,7 @@
                                                 </div>
 
                                                 <button type="submit" class="btn btn-md btn-primary">Save</button>
-                                                <a href="{{ route('waiting.index') }}"
+                                                <a href="{{ route('waitingtable.index') }}"
                                                     class="btn btn-md btn-secondary">back</a>
                                             </div>
 

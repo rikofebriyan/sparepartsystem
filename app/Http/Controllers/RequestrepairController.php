@@ -19,7 +19,17 @@ class RequestrepairController extends Controller
         //
         // $requestrepair = requestrepair::latest()->get();
         $requestrepair = requestrepair::all()->sortByDesc('id');
-        return view('sparepartrepair.waiting', [
+        return view('sparepartrepair.waitingtable', [
+            'reqtzy' => $requestrepair,
+        ]);
+    }
+
+    public function progress(Request $request)
+    {
+        //
+        // $requestrepair = requestrepair::latest()->get();
+        $requestrepair = requestrepair::all()->sortByDesc('id');
+        return view('sparepartrepair.waitingtable.progresstable', [
             'reqtzy' => $requestrepair,
         ]);
     }
@@ -45,8 +55,6 @@ class RequestrepairController extends Controller
     {
         //
         {
-            // $this->validate($request, [
-                // 'title' => 'required|string|max:155',
                 $validatedData = $request->validate([
                 'nama' => 'required',
                 'reg' => 'required',
@@ -57,9 +65,6 @@ class RequestrepairController extends Controller
                 'serial_no' => 'required',
                 'maker' => 'required',
                 'problem' => 'required',
-                'detail_standard' => [
-                    "foo => bar"
-                ],
                 'status' => 'required'
             ]);
 
@@ -73,27 +78,13 @@ class RequestrepairController extends Controller
             $requestrepair->serial_no = $validatedData['serial_no'];
             $requestrepair->maker = $validatedData['maker'];
             $requestrepair->problem = $validatedData['problem'];
-            $requestrepair->status = $validatedData['status'];    
+            $requestrepair->status = $validatedData['status'];
 
             $requestrepair->save();
-            // return dd($request);
-            // $request = requestrepair::create([
-            //     // 'tanggal_waktu' => $request->tanggal,
-            //     'nama' => $request->nama,
-            //     'reg' => $request->reg,
-            //     'machine_name' => $request->machine_name,
-            //     'line_name' => $request->line_name,
-            //     'part_name' => $request->part_name,
-            //     'part_type' => $request->part_type,
-            //     'serial_no' => $request->serial_no,
-            //     'maker' => $request->maker,
-            //     'problem' => $request->problem,
-            //     'status' => $request->status
-            // ]);
     
             if ($requestrepair) {
                 return redirect()
-                    ->route('waiting.index')
+                    ->route('waitingtable.index')
                     ->with([
                         'success' => 'New post has been created successfully'
                     ]);
@@ -153,9 +144,6 @@ class RequestrepairController extends Controller
             'serial_no' => 'required',
             'maker' => 'required',
             'problem' => 'required',
-            'detail_standard' => [
-                "foo => bar"
-            ],
             'status' => 'required'
         ]);
 
@@ -173,8 +161,62 @@ class RequestrepairController extends Controller
 
         $requestrepair->save();
 
-        return redirect(route('sparepartrepair.progress'));
+        return redirect(route('waitingtable.index'));
     }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \App\Http\Requests\UpdaterequestrepairRequest  $request
+     * @param  \App\Models\requestrepair  $requestrepair
+     * @return \Illuminate\Http\Response
+     */
+    public function updateadmin(UpdaterequestrepairRequest $request, requestrepair $requestrepair)
+    {
+        //
+        $validatedData = $request->validate([
+            'nama' => 'required',
+            'reg' => 'required',
+            'machine_name' => 'required',
+            'line_name' => 'required',
+            'part_name' => 'required',
+            'part_type' => 'required',
+            'serial_no' => 'required',
+            'maker' => 'required',
+            'problem' => 'required',
+            'status' => 'required',
+
+            'type_of_part' => 'required',
+            'sparepart_ETA' => 'required',
+            'part_price' => 'required',
+            'stock_sparepart' => 'required',
+            'urgency' => 'required'
+        ]);
+
+        $requestrepair = requestrepair::find($request->get('id'));
+        $requestrepair->nama = $validatedData['nama'];
+        $requestrepair->reg = $validatedData['reg'];
+        $requestrepair->machine_name = $validatedData['machine_name'];
+        $requestrepair->line_name = $validatedData['line_name'];
+        $requestrepair->part_name = $validatedData['part_name'];
+        $requestrepair->part_type = $validatedData['part_type'];
+        $requestrepair->serial_no = $validatedData['serial_no'];
+        $requestrepair->maker = $validatedData['maker'];
+        $requestrepair->problem = $validatedData['problem'];
+        $requestrepair->status = $validatedData['status'];    
+        $requestrepair->status = $validatedData['type_of_part'];    
+        $requestrepair->status = $validatedData['sparepart_ETA'];    
+        $requestrepair->status = $validatedData['part_price'];    
+        $requestrepair->status = $validatedData['stock_sparepart'];    
+        $requestrepair->status = $validatedData['urgency'];    
+
+        $requestrepair->save();
+
+        return redirect(route('progresstable.index'));
+    }
+
+
+
 
     /**
      * Remove the specified resource from storage.
