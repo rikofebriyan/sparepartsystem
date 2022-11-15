@@ -17,8 +17,9 @@
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 
-    <link rel="stylesheet" href="{{ asset('/css/riko.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('datatables/datatables.min.css') }}" />
+    {{-- <link rel="stylesheet" href="{{ asset('/css/riko.css') }}"> --}}
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">
 
 
 </head>
@@ -117,14 +118,17 @@
         </main>
     </div>
 </body>
-<script type="text/javascript" src="{{ asset('datatables/datatables.min.js') }}"></script>
+
+
+<script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js">
+</script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js"></script>
+
 <script>
     $(document).ready(function() {
-        $('#example').DataTable({
-            scrollX: true,
-        });
+        $('#example').DataTable();
     });
 </script>
-
 
 </html>
