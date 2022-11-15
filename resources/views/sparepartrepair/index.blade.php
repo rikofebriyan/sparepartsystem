@@ -31,7 +31,7 @@
                         </p>
                     </div>
                     <div class="icon">
-                        <i class="fa fa-money" aria-hidden="true"></i>
+                        <i class="fa fa-user-plus" aria-hidden="true"></i>
                     </div>
                     <a href="#" class="card-box-footer">View More <i class="fa fa-arrow-circle-right"></i></a>
                 </div>

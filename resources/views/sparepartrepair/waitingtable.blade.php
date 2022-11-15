@@ -53,7 +53,7 @@
                             <td>{{ $req->problem }}</td>
                             <td>{{ $req->detail_standard }}</td>
                             <td>{{ $req->status }}</td>
-                            <td>{{ $req->created_at->format('d-m-Y') }}</td>
+                            <td>{{ $req->created_at->format('d-m-Y H:i:s') }}</td>
                             <td class="text-center">
 
 
@@ -69,15 +69,15 @@
 
                                                 <input type="hidden" name="id" id="id"
                                                     value="{{ $req->id }}">
-                                                <button type="submit" class="btn btn-sm btn-primary mx-1">EDIT</button>
+                                                <button type="submit" class="btn btn-sm btn-primary mx-1">PROCESS</button>
                                             </form>
                                             <form onsubmit="return confirm('Apakah Anda Yakin ?');"
                                                 action="{{ route('waitingtable.destroy', $req->id) }}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
-                                                <input type="hidden" name="id" id="id"
+                                                {{-- <input type="hidden" name="id" id="id"
                                                     value="{{ $req->id }}">
-                                                <button type="submit" class="btn btn-sm btn-danger mx-1">HAPUS</button>
+                                                <button type="submit" class="btn btn-sm btn-danger mx-1">HAPUS</button> --}}
                                             </form>
 
                                         </div>

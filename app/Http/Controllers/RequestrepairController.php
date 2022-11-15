@@ -78,6 +78,18 @@ class RequestrepairController extends Controller
             $requestrepair->serial_no = $validatedData['serial_no'];
             $requestrepair->maker = $validatedData['maker'];
             $requestrepair->problem = $validatedData['problem'];
+            $requestrepair->ampere=$request->get('ampere');
+            $requestrepair->meger=$request->get('meger');
+            $requestrepair->pressure=$request->get('pressure');
+            $requestrepair->flow=$request->get('flow');
+            $requestrepair->temperature=$request->get('temperature');
+            $requestrepair->rpm=$request->get('rpm');
+            $requestrepair->ohm=$request->get('ohm');
+            $requestrepair->volt=$request->get('volt');
+            $requestrepair->flatness=$request->get('flatness');
+            $requestrepair->gather=$request->get('gather');
+            $requestrepair->load=$request->get('load');
+            $requestrepair->runout=$request->get('runout');
             $requestrepair->status = $validatedData['status'];
 
             $requestrepair->save();
@@ -156,6 +168,25 @@ class RequestrepairController extends Controller
         $requestrepair->part_type=$request->get('part_type');
         $requestrepair->serial_no=$request->get('serial_no');
         $requestrepair->maker=$request->get('maker');
+        $requestrepair->problem=$request->get('problem');
+        $requestrepair->ampere=$request->get('ampere');
+        $requestrepair->meger=$request->get('meger');
+        $requestrepair->pressure=$request->get('pressure');
+        $requestrepair->flow=$request->get('flow');
+        $requestrepair->temperature=$request->get('temperature');
+        $requestrepair->rpm=$request->get('rpm');
+        $requestrepair->ohm=$request->get('ohm');
+        $requestrepair->volt=$request->get('volt');
+        $requestrepair->flatness=$request->get('flatness');
+        $requestrepair->gather=$request->get('gather');
+        $requestrepair->load=$request->get('load');
+        $requestrepair->runout=$request->get('runout');
+
+        $requestrepair->type_of_part=$request->get('type_of_part');
+        $requestrepair->sparepart_ETA=$request->get('sparepart_ETA');
+        $requestrepair->part_price=$request->get('part_price');
+        $requestrepair->stock_sparepart=$request->get('stock_sparepart');
+        $requestrepair->urgency=$request->get('urgency');
         $requestrepair->problem=$request->get('problem');
         $requestrepair->status=$request->get('status');
         // $requestrepair->reg = $validatedData['reg'];

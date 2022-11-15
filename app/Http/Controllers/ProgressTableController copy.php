@@ -23,6 +23,6 @@ class ProgressTableController extends Controller
      */
     public function index()
     {
-        return view('sparepartrepair.progresstable');
+        return view('sparepartrepair.progress');
     }
 }

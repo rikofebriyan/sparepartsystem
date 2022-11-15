@@ -161,57 +161,69 @@
                                                                 class="col-sm-6 col-form-label">Ampere</label>
                                                             <div class="col-sm-6">
                                                                 <input type="text" class="form-control" id="ampere"
-                                                                    name="ampere">
+                                                                    name="ampere" value="{{ $requestrepair->ampere }}">
                                                             </div>
                                                         </div>
 
                                                         {{-- DETAIL STANDARD KIRI 2 --}}
-                                                        <div class="mb-3 row">
+                                                        <div
+                                                            class="mb-3
+                                                                    row">
                                                             <label for="meger"
                                                                 class="col-sm-6 col-form-label">Meger</label>
                                                             <div class="col-sm-6">
                                                                 <input type="text" class="form-control" id="meger"
-                                                                    name="meger">
+                                                                    name="meger" value="{{ $requestrepair->meger }}">
                                                             </div>
                                                         </div>
 
                                                         {{-- DETAIL STANDARD KIRI 3 --}}
-                                                        <div class="mb-3 row">
+                                                        <div
+                                                            class="mb-3
+                                                                        row">
                                                             <label for="pressure"
                                                                 class="col-sm-6 col-form-label">Pressure</label>
                                                             <div class="col-sm-6">
                                                                 <input type="text" class="form-control" id="pressure"
-                                                                    name="pressure">
+                                                                    name="pressure"
+                                                                    value="{{ $requestrepair->pressure }}">
                                                             </div>
                                                         </div>
 
                                                         {{-- DETAIL STANDARD KIRI 4 --}}
-                                                        <div class="mb-3 row">
+                                                        <div
+                                                            class="mb-3
+                                                                            row">
                                                             <label for="flow"
                                                                 class="col-sm-6 col-form-label">Flow</label>
                                                             <div class="col-sm-6">
                                                                 <input type="text" class="form-control" id="flow"
-                                                                    name="flow">
+                                                                    name="flow" value="{{ $requestrepair->flow }}">
                                                             </div>
                                                         </div>
 
                                                         {{-- DETAIL STANDARD KIRI 5 --}}
-                                                        <div class="mb-3 row">
+                                                        <div
+                                                            class="mb-3
+                                                                                row">
                                                             <label for="temperature"
                                                                 class="col-sm-6 col-form-label">Temperature</label>
                                                             <div class="col-sm-6">
                                                                 <input type="text" class="form-control"
-                                                                    id="temperature" name="temperature">
+                                                                    id="temperature" name="temperature"
+                                                                    value="{{ $requestrepair->temperature }}">
                                                             </div>
                                                         </div>
 
                                                         {{-- DETAIL STANDARD KIRI 6 --}}
-                                                        <div class="mb-3 row">
+                                                        <div
+                                                            class="mb-3
+                                                                                    row">
                                                             <label for="rpm"
                                                                 class="col-sm-6 col-form-label">Rpm</label>
                                                             <div class="col-sm-6">
                                                                 <input type="text" class="form-control" id="rpm"
-                                                                    name="rpm">
+                                                                    name="rpm" value="{{ $requestrepair->rpm }}">
                                                             </div>
                                                         </div>
 
@@ -324,7 +336,8 @@
                                         <div class="p-3 border">
 
                                             <div class="mb-3 row">
-                                                <label for="sparepart_ETA" class="col-sm-2 col-form-label">Spare Part
+                                                <label for="sparepart_ETA" class="col-sm-2 col-form-label">Spare
+                                                    Part
                                                     ETA</label>
                                                 <div class="col-sm-10">
                                                     <input type="text" class="form-control" id="sparepart_ETA"

@@ -172,7 +172,7 @@
                                                     <div class="col-sm-10">
                                                         <input type="text"
                                                             class="form-control @error('status') is-invalid @enderror"
-                                                            id="status" name="status" value="1" required>
+                                                            id="status" name="status" value="Waiting" required>
 
                                                         <!-- error message untuk status -->
                                                         @error('status')

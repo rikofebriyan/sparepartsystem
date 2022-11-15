@@ -42,19 +42,10 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">TICKETING</a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
                                 E-CATALOGUE
                             </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="/" role="button" data-bs-toggle="dropdown"
@@ -63,11 +54,14 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="/sparepartrepair/request">Request</a></li>
-                                <li><a class="dropdown-item" href="/sparepartrepair/waiting">Waiting Page</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="/">Something else here</a></li>
+                                <li><a class="dropdown-item" href="/sparepartrepair/waitingtable">Waiting Page</a></li>
+                                <li><a class="dropdown-item" href="/sparepartrepair/progresstable">Progress Admin
+                                        Page</a>
+                                </li>
+
                             </ul>
                         </li>
 

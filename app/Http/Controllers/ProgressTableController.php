@@ -19,7 +19,7 @@ class ProgressTableController extends Controller
         //
         // $requestrepair = requestrepair::latest()->get();
         $requestrepair = requestrepair::all()->sortByDesc('id');
-        return view('sparepartrepair.waitingtable', [
+        return view('sparepartrepair.progresstable', [
             'reqtzy' => $requestrepair,
         ]);
     }
