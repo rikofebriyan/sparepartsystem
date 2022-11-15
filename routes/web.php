@@ -16,6 +16,5 @@ Route::middleware('auth')->group(function() {
     Route::get('/sparepartrepair/request', [SparepartrepairController::class, 'request']);
     Route::resource('/sparepartrepair/waitingtable', RequestrepairController::class);
     Route::resource('/sparepartrepair/progresstable', RequestrepairController::class);
-    Route::get('/sparepartrepair/progresstable', [ProgressTableController::class, 'index']);
 
 });

@@ -161,7 +161,7 @@ class RequestrepairController extends Controller
 
         $requestrepair->save();
 
-        return redirect(route('waitingtable.index'));
+        return redirect(route('progresstable.index'));
     }
 
     /**

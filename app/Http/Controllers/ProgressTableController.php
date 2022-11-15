@@ -17,6 +17,11 @@ class ProgressTableController extends Controller
     public function index()
     {
         //
+        // $requestrepair = requestrepair::latest()->get();
+        $requestrepair = requestrepair::all()->sortByDesc('id');
+        return view('sparepartrepair.waitingtable', [
+            'reqtzy' => $requestrepair,
+        ]);
     }
 
     /**
@@ -71,7 +76,26 @@ class ProgressTableController extends Controller
      */
     public function update(Request $request, requestrepair $requestrepair)
     {
-        //
+         //
+         dd($request);
+         $validatedData = $request->validate([
+
+
+            'type_of_part' => 'required',
+            // 'sparepart_ETA' => 'required',
+            'part_price' => 'required',
+            'stock_sparepart' => 'required',
+        ]);
+
+        $requestrepair = requestrepair::find($request->get('id'));
+        $requestrepair->status = $validatedData['type_of_part'];
+        // $requestrepair->status = $validatedData['sparepart_ETA'];
+        $requestrepair->status = $validatedData['part_price'];
+        $requestrepair->status = $validatedData['stock_sparepart'];
+
+        $requestrepair->save();
+
+        return redirect(route('progresstable.index'));
     }
 
     /**

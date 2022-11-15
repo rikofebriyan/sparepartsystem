@@ -36,7 +36,7 @@
                     <div class="accordion-body">
 
                         {{-- form input --}}
-                        <form class="{{ route('waitingtable.update', $requestrepair->id) }}" method="POST"
+                        <form class="{{ route('progresstable.update', $requestrepair->id) }}" method="POST"
                             enctype="multipart/form-data">
                             @csrf
                             @method('put')
@@ -58,17 +58,8 @@
                                                 <div class="mb-3 row">
                                                     <label for="nama" class="col-sm-2 col-form-label">Nama</label>
                                                     <div class="col-sm-10">
-                                                        <input type="text"
-                                                            class="form-control @error('nama') is-invalid @enderror"
-                                                            id="nama" name="nama" value="{{ $requestrepair->nama }}"
-                                                            required>
-
-                                                        <!-- error message untuk nama -->
-                                                        @error('nama')
-                                                            <div class="invalid-feedback">
-                                                                {{ $message }}
-                                                            </div>
-                                                        @enderror
+                                                        <input type="text" class="form-control" id="nama"
+                                                            name="nama" value="{{ $requestrepair->nama }}" required>
                                                     </div>
                                                 </div>
 
@@ -76,17 +67,9 @@
                                                 <div class="mb-3 row">
                                                     <label for="reg" class="col-sm-2 col-form-label">Reg / SP</label>
                                                     <div class="col-sm-10">
-                                                        <input type="text"
-                                                            class="form-control @error('reg') is-invalid @enderror"
-                                                            id="reg" name="reg" value="{{ $requestrepair->reg }}"
-                                                            required>
+                                                        <input type="text" class="form-control" id="reg"
+                                                            name="reg" value="{{ $requestrepair->reg }}" required>
 
-                                                        <!-- error message untuk reg -->
-                                                        @error('reg')
-                                                            <div class="invalid-feedback">
-                                                                {{ $message }}
-                                                            </div>
-                                                        @enderror
                                                     </div>
                                                 </div>
 
@@ -94,123 +77,63 @@
                                                     <label for="machine_name" class="col-sm-2 col-form-label">Machine
                                                         Name</label>
                                                     <div class="col-sm-10">
-                                                        <input type="text"
-                                                            class="form-control @error('machine_name') is-invalid @enderror"
-                                                            id="machine_name" name="machine_name"
-                                                            value="{{ $requestrepair->machine_name }}" required>
-
-                                                        <!-- error message untuk machine_name -->
-                                                        @error('machine_name')
-                                                            <div class="invalid-feedback">
-                                                                {{ $message }}
-                                                            </div>
-                                                        @enderror
+                                                        <input type="text" class="form-control" id="machine_name"
+                                                            name="machine_name" value="{{ $requestrepair->machine_name }}"
+                                                            required>
                                                     </div>
                                                 </div>
 
                                                 <div class="mb-3 row">
                                                     <label for="line_name" class="col-sm-2 col-form-label">Line Name</label>
                                                     <div class="col-sm-10">
-                                                        <input type="text"
-                                                            class="form-control @error('line_name') is-invalid @enderror"
-                                                            id="line_name" name="line_name"
-                                                            value="{{ $requestrepair->line_name }}" required>
-
-                                                        <!-- error message untuk line_name -->
-                                                        @error('line_name')
-                                                            <div class="invalid-feedback">
-                                                                {{ $message }}
-                                                            </div>
-                                                        @enderror
+                                                        <input type="text" class="form-control" id="line_name"
+                                                            name="line_name" value="{{ $requestrepair->line_name }}"
+                                                            required>
                                                     </div>
                                                 </div>
 
                                                 <div class="mb-3 row">
                                                     <label for="part_name" class="col-sm-2 col-form-label">Part Name</label>
                                                     <div class="col-sm-10">
-                                                        <input type="text"
-                                                            class="form-control @error('part_name') is-invalid @enderror"
-                                                            id="part_name" name="part_name"
-                                                            value="{{ $requestrepair->part_name }}" required>
-
-                                                        <!-- error message untuk part_name -->
-                                                        @error('part_name')
-                                                            <div class="invalid-feedback">
-                                                                {{ $message }}
-                                                            </div>
-                                                        @enderror
+                                                        <input type="text" class="form-control" id="part_name"
+                                                            name="part_name" value="{{ $requestrepair->part_name }}"
+                                                            required>
                                                     </div>
                                                 </div>
 
                                                 <div class="mb-3 row">
                                                     <label for="part_type" class="col-sm-2 col-form-label">Part Type</label>
                                                     <div class="col-sm-10">
-                                                        <input type="text"
-                                                            class="form-control @error('part_type') is-invalid @enderror"
-                                                            id="part_type" name="part_type"
-                                                            value="{{ $requestrepair->part_type }}" required>
-
-                                                        <!-- error message untuk part_type -->
-                                                        @error('part_type')
-                                                            <div class="invalid-feedback">
-                                                                {{ $message }}
-                                                            </div>
-                                                        @enderror
+                                                        <input type="text" class="form-control" id="part_type"
+                                                            name="part_type" value="{{ $requestrepair->part_type }}"
+                                                            required>
                                                     </div>
                                                 </div>
 
                                                 <div class="mb-3 row">
                                                     <label for="serial_no" class="col-sm-2 col-form-label">Serial No</label>
                                                     <div class="col-sm-10">
-                                                        <input type="text"
-                                                            class="form-control @error('serial_no') is-invalid @enderror"
-                                                            id="serial_no" name="serial_no"
-                                                            value="{{ $requestrepair->serial_no }}" required>
-
-                                                        <!-- error message untuk serial_no -->
-                                                        @error('serial_no')
-                                                            <div class="invalid-feedback">
-                                                                {{ $message }}
-                                                            </div>
-                                                        @enderror
+                                                        <input type="text" class="form-control" id="serial_no"
+                                                            name="serial_no" value="{{ $requestrepair->serial_no }}"
+                                                            required>
                                                     </div>
                                                 </div>
 
                                                 <div class="mb-3 row">
                                                     <label for="maker" class="col-sm-2 col-form-label">Maker</label>
                                                     <div class="col-sm-10">
-                                                        <input type="text"
-                                                            class="form-control @error('maker') is-invalid @enderror"
-                                                            id="maker" name="maker"
-                                                            value="{{ $requestrepair->maker }}" required>
-
-                                                        <!-- error message untuk maker -->
-                                                        @error('maker')
-                                                            <div class="invalid-feedback">
-                                                                {{ $message }}
-                                                            </div>
-                                                        @enderror
+                                                        <input type="text" class="form-control" id="maker"
+                                                            name="maker" value="{{ $requestrepair->maker }}" required>
                                                     </div>
                                                 </div>
 
                                                 <div class="mb-3 row invisible">
                                                     <label for="status" class="col-sm-2 col-form-label">Status</label>
                                                     <div class="col-sm-10">
-                                                        <input type="text"
-                                                            class="form-control @error('status') is-invalid @enderror"
-                                                            id="status" name="status"
-                                                            value="{{ $requestrepair->status }}" required>
-
-                                                        <!-- error message untuk status -->
-                                                        @error('status')
-                                                            <div class="invalid-feedback">
-                                                                {{ $message }}
-                                                            </div>
-                                                        @enderror
+                                                        <input type="text" class="form-control" id="status"
+                                                            name="status" value="{{ $requestrepair->status }}" required>
                                                     </div>
                                                 </div>
-
-
                                             </div>
                                         </div>
                                         <div class="col">
@@ -221,14 +144,6 @@
                                                     <label for="problem" class="col-sm-2 col-form-label">Problem</label>
                                                     <div class="col-sm-10">
                                                         <textarea class="form-control" id="problem" name="problem" rows="3" required>{{ $requestrepair->problem }}</textarea>
-
-                                                        <!-- error message untuk status -->
-                                                        @error('status')
-                                                            <div class="invalid-feedback">
-                                                                {{ $message }}
-                                                            </div>
-                                                        @enderror
-
                                                     </div>
                                                 </div>
 
@@ -366,15 +281,11 @@
                                                                     name="runout">
                                                             </div>
                                                         </div>
-
-
                                                     </div>
-
-
                                                 </div>
 
                                                 <button type="submit" class="btn btn-md btn-primary">Save</button>
-                                                <a href="{{ route('waitingtable.index') }}"
+                                                <a href="{{ route('progresstable.index') }}"
                                                     class="btn btn-md btn-secondary">back</a>
                                             </div>
 
@@ -406,7 +317,7 @@
                     <div class="accordion-body">
 
                         {{-- form input --}}
-                        <form class="{{ route('waitingtable.updateadmin', $requestrepair->id) }}" method="POST">
+                        <form class="{{ route('progresstable.update', $requestrepair->id) }}" method="POST">
                             @csrf
                             @method('put')
                             <input type="hidden" name="id" id="id" value="">
@@ -421,8 +332,7 @@
                                                         ETA</label>
                                                     <div class="col-sm-10">
                                                         <input type="datetime-local" class="form-control"
-                                                            id="sparepart_ETA" name="sparepart_ETA" value=""
-                                                            required>
+                                                            id="sparepart_ETA" name="sparepart_ETA" value="">
                                                     </div>
                                                 </div>
 
@@ -430,27 +340,16 @@
                                                     <label for="type_of_part" class="col-sm-2 col-form-label">Type of
                                                         Part</label>
                                                     <div class="col-sm-10">
-                                                        <input type="text"
-                                                            class="form-control @error('type_of_part') is-invalid @enderror"
-                                                            id="type_of_part" name="type_of_part" value=""
-                                                            required>
+                                                        <input type="text" class="form-control" id="type_of_part"
+                                                            name="type_of_part" value="">
                                                     </div>
                                                 </div>
 
                                                 <div class="mb-3 row invisible">
                                                     <label for="status" class="col-sm-2 col-form-label">Status</label>
                                                     <div class="col-sm-10">
-                                                        <input type="text"
-                                                            class="form-control @error('status') is-invalid @enderror"
-                                                            id="status" name="status" value="progressed_admin"
-                                                            required>
-
-                                                        <!-- error message untuk status -->
-                                                        @error('status')
-                                                            <div class="invalid-feedback">
-                                                                {{ $message }}
-                                                            </div>
-                                                        @enderror
+                                                        <input type="text" class="form-control" id="status"
+                                                            name="status" value="progressed_admin" required>
                                                     </div>
                                                 </div>
 
@@ -465,9 +364,8 @@
                                                     <label for="part_price" class="col-sm-2 col-form-label">
                                                         Part Price</label>
                                                     <div class="col-sm-10">
-                                                        <input type="number"
-                                                            class="form-control number @error('part_price') is-invalid @enderror"
-                                                            id="part_price" name="part_price" value="" required>
+                                                        <input type="number" class="form-control number" id="part_price"
+                                                            name="part_price" value="">
                                                     </div>
                                                 </div>
 
@@ -475,16 +373,14 @@
                                                     <label for="stock_sparepart" class="col-sm-2 col-form-label">
                                                         Stock Spare Part</label>
                                                     <div class="col-sm-10">
-                                                        <input type="number"
-                                                            class="form-control number @error('stock_sparepart') is-invalid @enderror"
-                                                            id="stock_sparepart" name="stock_sparepart" value=""
-                                                            required>
+                                                        <input type="number" class="form-control number"
+                                                            id="stock_sparepart" name="stock_sparepart" value="">
                                                     </div>
                                                 </div>
 
 
                                                 <button type="submit" class="btn btn-md btn-primary">Save</button>
-                                                <a href="{{ route('waitingtable.index') }}"
+                                                <a href="{{ route('progresstable.index') }}"
                                                     class="btn btn-md btn-secondary">back</a>
                                             </div>
 
